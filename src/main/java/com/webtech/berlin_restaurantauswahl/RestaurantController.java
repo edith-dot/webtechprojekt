@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+//Hier die verbindung erstellt zwischen backend und frontend
 @RestController
 public class RestaurantController {
 
