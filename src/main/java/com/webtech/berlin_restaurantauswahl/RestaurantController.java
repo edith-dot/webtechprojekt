@@ -1,11 +1,14 @@
 package com.webtech.berlin_restaurantauswahl;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 //Hier die verbindung erstellt zwischen backend und frontend
+//Hier hat das CrossOrigin gefehlt
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 public class RestaurantController {
 
