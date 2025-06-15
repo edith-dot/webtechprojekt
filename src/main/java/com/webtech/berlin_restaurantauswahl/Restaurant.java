@@ -1,11 +1,20 @@
 package com.webtech.berlin_restaurantauswahl;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Restaurant {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
     private String address;
     private String businesshours;
     private String category;
+
+    public Restaurant() {}
 
     public Restaurant(String name, String address, String businesshours, String category) {
         this.name = name;
@@ -14,32 +23,36 @@ public class Restaurant {
         this.category = category;
     }
 
-    public String getName() {
-        return name;
+    public Long getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getName() {
+        return name;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getBusinesshours() {
         return businesshours;
     }
 
-    public void setBusinesshours(String businesshours) {
-        this.businesshours = businesshours;
-    }
-
     public String getCategory() {
         return category;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setBusinesshours(String businesshours) {
+        this.businesshours = businesshours;
     }
 
     public void setCategory(String category) {
