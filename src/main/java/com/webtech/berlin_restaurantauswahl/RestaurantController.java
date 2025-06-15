@@ -8,7 +8,7 @@ import java.util.List;
 
 //Hier die verbindung erstellt zwischen backend und frontend
 //Hier hat das CrossOrigin gefehlt
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://webtechfrontend-gwf2.onrender.com")
 @RestController
 public class RestaurantController {
 
