@@ -33,4 +33,10 @@ public class RestaurantController {
     public List<Restaurant> searchByCategory(@PathVariable String category) {
         return restaurantRepository.findByCategoryIgnoreCase(category);
     }
+
+    @DeleteMapping("/berliner-restaurantauswahl/{id}")
+    public void deleteRestaurant(@PathVariable Long id) {
+        restaurantRepository.deleteById(id);
+    }
+
 }
