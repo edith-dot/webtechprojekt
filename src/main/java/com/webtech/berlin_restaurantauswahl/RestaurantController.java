@@ -8,8 +8,7 @@ import java.util.List;
 @RestController
 public class RestaurantController {
 
-    private final
-    RestaurantRepository restaurantRepository;
+    private final RestaurantRepository restaurantRepository;
 
     public RestaurantController(RestaurantRepository restaurantRepository) {
         this.restaurantRepository = restaurantRepository;
@@ -23,5 +22,15 @@ public class RestaurantController {
     @PostMapping("/berliner-restaurantauswahl")
     public Restaurant addRestaurant(@RequestBody Restaurant restaurant) {
         return restaurantRepository.save(restaurant);
+    }
+
+    @GetMapping("/berliner-restaurantauswahl/search/{name}")
+    public List<Restaurant> searchByName(@PathVariable String name) {
+        return restaurantRepository.findByNameContainingIgnoreCase(name);
+    }
+
+    @GetMapping("/berliner-restaurantauswahl/category/{category}")
+    public List<Restaurant> searchByCategory(@PathVariable String category) {
+        return restaurantRepository.findByCategoryIgnoreCase(category);
     }
 }
